@@ -6,10 +6,10 @@ let {Status, createBehavior, factory} = jibo.bt;
 let blackboard = {};
 
 module.exports = createBehavior({
-    constructor(getConfig, onStatus, onResults) {
-        this.getConfig = getConfig;
-        this.onStatus = onStatus;
-        this.onResults = onResults;
+    constructor(options) {
+        this.getConfig = options.getConfig;
+        this.onStatus = options.onStatus;
+        this.onResults = options.onResults;
         this.status = Status.INVALID;
     },
     start() {
