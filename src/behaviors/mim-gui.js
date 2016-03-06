@@ -1,13 +1,15 @@
-import path from 'path';
-import jibo from 'jibo';
-import MimManager from '../mim/mim-manager.js';
-import AsrResults from '../mim/asr-result.js';
-import SpeakerIds from '../mim/speaker-ids.js';
+let path = require ('path');
+let jibo = require ('jibo');
+let MimManager = require ('../mim/mim-manager.js');
+let AsrResults = require ('../mim/asr-result.js');
+let SpeakerIds = require ('../mim/speaker-ids.js');
 
-let {Status, createBehavior, factory, blackboard} = jibo.bt;
+let Status = jibo.bt.Status;
+let Behavior = jibo.bt.Behavior;
 
-module.exports = createBehavior({
+class MimGui extends Behavior {
     constructor(options) {
+        super(options);
         this.getConfig = options.getConfig;
         this.onStatus = options.onStatus;
         this.onResults = options.onResults;
@@ -17,7 +19,7 @@ module.exports = createBehavior({
         this.asrResults = null;
         this.speakerIds = null;
         this.guiManagerEventHandler = this.onGuiManagerEvent.bind(this);
-    },
+    }
     onGuiManagerEvent(event) {
         //console.log(`MimGui: guiManagerEventHandler ${event.type}`);
         switch (event.type) {
@@ -44,7 +46,7 @@ module.exports = createBehavior({
             case 'swipeDown':
                 break;
         }
-    },
+    }
     start() {
         //console.log(`MimGui: start`);
         this.status = Status.IN_PROGRESS;
@@ -59,7 +61,7 @@ module.exports = createBehavior({
             MimManager.guiManager.listenStart(this.mimState, this.mimConfig);
         }
         return true;
-    },
+    }
     stop() {
         //console.log(`MimGui: stop`, this.asrResults);
         if (MimManager.guiManager && (this.status === Status.SUCCEEDED)) {
@@ -72,10 +74,12 @@ module.exports = createBehavior({
                 speakerIds: this.speakerIds
             });
         }
-    },
+    }
     update() {
         return this.status
     }
-});
+};
 
-factory.addBehavior(module, "project");
+jibo.bt.register("MimGui", "project",MimGui);
+
+module.exports = MimGui;

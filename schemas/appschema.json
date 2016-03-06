@@ -55,5 +55,8 @@
         "defaultValue": "(results) =>  {\n}"
       }
     ]
+  },
+  "meta": {
+    "version": 1
   }
 }

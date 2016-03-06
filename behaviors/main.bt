@@ -3,8 +3,8 @@
         "id": 1,
         "class": "Sequence",
         "name": "Skill Loops Always",
-        "args": [],
         "children": [
+            "e662584f-2030-4004-9fcb-fd1083e1fac2",
             15,
             47,
             49,
@@ -12,7 +12,8 @@
         ],
         "decorators": [
             13
-        ]
+        ],
+        "options": {}
     },
     "8": {
         "id": 8,
@@ -20,10 +21,10 @@
         "name": "Need to Get Size",
         "asset-pack": "core",
         "parent": 11,
-        "args": [],
         "children": [
             35
-        ]
+        ],
+        "options": {}
     },
     "11": {
         "id": 11,
@@ -31,7 +32,6 @@
         "name": "Get Pizza Order",
         "asset-pack": "core",
         "parent": 49,
-        "args": [],
         "children": [
             34,
             8,
@@ -40,41 +40,42 @@
         ],
         "decorators": [
             14
-        ]
+        ],
+        "options": {}
     },
     "13": {
         "id": 13,
         "class": "WhileCondition",
         "name": "",
         "asset-pack": "core",
-        "args": [
-            [
+        "options": {
+            "init": [
                 "() => {",
                 "}"
             ],
-            [
+            "conditional": [
                 "() => {",
                 "   return true;",
                 "}"
             ]
-        ]
+        }
     },
     "14": {
         "id": 14,
         "class": "WhileCondition",
         "name": "",
         "asset-pack": "core",
-        "args": [
-            [
+        "options": {
+            "init": [
                 "() => {",
                 "}"
             ],
-            [
+            "conditional": [
                 "() => {",
                 "   return notepad.wantsAnother;",
                 "}"
             ]
-        ]
+        }
     },
     "15": {
         "id": 15,
@@ -82,8 +83,8 @@
         "name": "Init Notepad",
         "asset-pack": "core",
         "parent": 1,
-        "args": [
-            [
+        "options": {
+            "exec": [
                 "() => {",
                 "  notepad.pizzas = [];",
                 "  notepad.pizzaSize = '';",
@@ -99,7 +100,7 @@
                 "  notepad.mimsPath =  path.resolve(__dirname, '../mims/mim-test');",
                 "}"
             ]
-        ]
+        }
     },
     "19": {
         "id": 19,
@@ -107,14 +108,14 @@
         "name": "Add Pizza to order",
         "asset-pack": "core",
         "parent": 11,
-        "args": [
-            [
+        "options": {
+            "exec": [
                 "() => {",
                 "  let pizza = { type: notepad.pizzaType, size: notepad.pizzaSize };",
                 "  notepad.pizzas.push(pizza);",
                 "}"
             ]
-        ]
+        }
     },
     "34": {
         "id": 34,
@@ -122,8 +123,8 @@
         "name": "Size and Type",
         "asset-pack": "project",
         "parent": 11,
-        "args": [
-            [
+        "options": {
+            "getConfig": [
                 "() =>  {",
                 "\treturn {",
                 "\t\tmimId: 'MimTestPizzaSizeAndType',",
@@ -135,11 +136,11 @@
                 "\t}",
                 "}"
             ],
-            [
+            "onStatus": [
                 "(status) =>  {",
                 "}"
             ],
-            [
+            "onResults": [
                 "(results) =>  {",
                 "  console.log(`main.bt: MimTestPizzaSizeAndType: onResults: `);",
                 "  console.log(results);",
@@ -159,7 +160,7 @@
                 "  }",
                 "}"
             ]
-        ]
+        }
     },
     "35": {
         "id": 35,
@@ -167,8 +168,11 @@
         "name": "Size",
         "asset-pack": "project",
         "parent": 8,
-        "args": [
-            [
+        "decorators": [
+            38
+        ],
+        "options": {
+            "getConfig": [
                 "() =>  {",
                 "\treturn {",
                 "\t\tmimId: 'MimTestPizzaSize',",
@@ -180,11 +184,11 @@
                 "\t}",
                 "}"
             ],
-            [
+            "onStatus": [
                 "(status) =>  {",
                 "}"
             ],
-            [
+            "onResults": [
                 "(results) =>  {",
                 "  console.log(`main.bt: MimTestPizzaSize: onResults: `);",
                 "  console.log(results);",
@@ -200,10 +204,7 @@
                 "  }",
                 "}"
             ]
-        ],
-        "decorators": [
-            38
-        ]
+        }
     },
     "36": {
         "id": 36,
@@ -211,8 +212,8 @@
         "name": "Another?",
         "asset-pack": "project",
         "parent": 11,
-        "args": [
-            [
+        "options": {
+            "getConfig": [
                 "() =>  {",
                 "\treturn {",
                 "\t\tmimId: 'MimTestWantAnotherPizza',",
@@ -224,11 +225,11 @@
                 "\t}",
                 "}"
             ],
-            [
+            "onStatus": [
                 "(status) =>  {",
                 "}"
             ],
-            [
+            "onResults": [
                 "(results) =>  {",
                 "  console.log(`main.bt: MimTestWantAnotherPizza: onResults: `);",
                 "  console.log(results);",
@@ -247,7 +248,7 @@
                 "  }",
                 "}"
             ]
-        ]
+        }
     },
     "37": {
         "id": 37,
@@ -255,8 +256,8 @@
         "name": "Pizza Delivery",
         "asset-pack": "project",
         "parent": 49,
-        "args": [
-            [
+        "options": {
+            "getConfig": [
                 "() =>  {",
                 "\treturn {",
                 "\t\tmimId: 'MimTestPizzaDelivery',",
@@ -268,11 +269,11 @@
                 "\t}",
                 "}"
             ],
-            [
+            "onStatus": [
                 "(status) =>  {",
                 "}"
             ],
-            [
+            "onResults": [
                 "(results) =>  {",
                 "  console.log(`main.bt: MimTestPizzaDelivery: onResults: `);",
                 "  console.log(results);",
@@ -288,20 +289,20 @@
                 "  }",
                 "}"
             ]
-        ]
+        }
     },
     "38": {
         "id": 38,
         "class": "Case",
         "name": "",
         "asset-pack": "core",
-        "args": [
-            [
+        "options": {
+            "conditional": [
                 "() => {",
                 "  return !notepad.pizzaSize;",
                 "}"
             ]
-        ]
+        }
     },
     "39": {
         "id": 39,
@@ -309,8 +310,8 @@
         "name": "Order Summary",
         "asset-pack": "project",
         "parent": 49,
-        "args": [
-            [
+        "options": {
+            "getConfig": [
                 "() =>  {",
                 "\treturn {",
                 "\t\tmimId: 'MimTestPizzOrderSummary',",
@@ -324,11 +325,11 @@
                 "\t}",
                 "}"
             ],
-            [
+            "onStatus": [
                 "(status) =>  {",
                 "}"
             ],
-            [
+            "onResults": [
                 "(results) =>  {",
                 "  console.log(`main.bt: MimTestPizzOrderSummary: onResults: `);",
                 "  console.log(results);",
@@ -344,7 +345,7 @@
                 "  }",
                 "}"
             ]
-        ]
+        }
     },
     "41": {
         "id": 41,
@@ -352,8 +353,8 @@
         "name": "Generate order summary",
         "asset-pack": "core",
         "parent": 49,
-        "args": [
-            [
+        "options": {
+            "exec": [
                 "() => {",
                 "  ",
                 "  notepad.pizzaOrderSummaryText = '';",
@@ -387,7 +388,7 @@
                 "  // });",
                 "}"
             ]
-        ]
+        }
     },
     "42": {
         "id": 42,
@@ -395,11 +396,11 @@
         "name": "Order Confirmation Check",
         "asset-pack": "core",
         "parent": 49,
-        "args": [],
         "children": [
             43,
             44
-        ]
+        ],
+        "options": {}
     },
     "43": {
         "id": 43,
@@ -407,8 +408,11 @@
         "name": "Glad I could help",
         "asset-pack": "project",
         "parent": 42,
-        "args": [
-            [
+        "decorators": [
+            45
+        ],
+        "options": {
+            "getConfig": [
                 "() =>  {",
                 "\treturn {",
                 "\t\tmimId: 'MimTestGladToHelp',",
@@ -420,20 +424,17 @@
                 "\t}",
                 "}"
             ],
-            [
+            "onStatus": [
                 "(status) =>  {",
                 "}"
             ],
-            [
+            "onResults": [
                 "(results) =>  {",
                 "  console.log(`main.bt: MimTestGladToHelp: onResults: `);",
                 "  console.log(results);",
                 "}"
             ]
-        ],
-        "decorators": [
-            45
-        ]
+        }
     },
     "44": {
         "id": 44,
@@ -441,8 +442,11 @@
         "name": "OK, scratch that",
         "asset-pack": "project",
         "parent": 42,
-        "args": [
-            [
+        "decorators": [
+            46
+        ],
+        "options": {
+            "getConfig": [
                 "() =>  {",
                 "\treturn {",
                 "\t\tmimId: 'MimTestScratchThat',",
@@ -454,46 +458,43 @@
                 "\t}",
                 "}"
             ],
-            [
+            "onStatus": [
                 "(status) =>  {",
                 "}"
             ],
-            [
+            "onResults": [
                 "(results) =>  {",
                 "  console.log(`main.bt: MimTestScratchThat: onResults: `);",
                 "  console.log(results);",
                 "}"
             ]
-        ],
-        "decorators": [
-            46
-        ]
+        }
     },
     "45": {
         "id": 45,
         "class": "Case",
         "name": "",
         "asset-pack": "core",
-        "args": [
-            [
+        "options": {
+            "conditional": [
                 "() => {",
                 "  return notepad.orderConfirmed",
                 "}"
             ]
-        ]
+        }
     },
     "46": {
         "id": 46,
         "class": "Case",
         "name": "",
         "asset-pack": "core",
-        "args": [
-            [
+        "options": {
+            "conditional": [
                 "() => {",
                 "  return !notepad.orderConfirmed",
                 "}"
             ]
-        ]
+        }
     },
     "47": {
         "id": 47,
@@ -501,8 +502,11 @@
         "name": "Wait for 'order pizza'",
         "asset-pack": "project",
         "parent": 1,
-        "args": [
-            [
+        "decorators": [
+            48
+        ],
+        "options": {
+            "getConfig": [
                 "() =>  {",
                 "\treturn {",
                 "\t\tmimId: 'MimTestWaitForOrderPizza',",
@@ -514,11 +518,11 @@
                 "\t}",
                 "}"
             ],
-            [
+            "onStatus": [
                 "(status) =>  {",
                 "}"
             ],
-            [
+            "onResults": [
                 "(results) =>  {",
                 "  console.log(`main.bt: MimTestWaitForOrderPizza: onResults: `);",
                 "  console.log(results);",
@@ -533,27 +537,24 @@
                 "  }",
                 "}"
             ]
-        ],
-        "decorators": [
-            48
-        ]
+        }
     },
     "48": {
         "id": 48,
         "class": "WhileCondition",
         "name": "",
         "asset-pack": "core",
-        "args": [
-            [
+        "options": {
+            "init": [
                 "() => {",
                 "}"
             ],
-            [
+            "conditional": [
                 "() => {",
                 "    return !notepad.readyForOrder;",
                 "}"
             ]
-        ]
+        }
     },
     "49": {
         "id": 49,
@@ -561,7 +562,6 @@
         "name": "",
         "asset-pack": "core",
         "parent": 1,
-        "args": [],
         "decorators": [
             50
         ],
@@ -571,22 +571,23 @@
             41,
             39,
             42
-        ]
+        ],
+        "options": {}
     },
     "50": {
         "id": 50,
         "class": "SucceedOnEvent",
         "name": "",
         "asset-pack": "core",
-        "args": [
-            "order-error",
-            [
+        "options": {
+            "eventName": "order-error",
+            "onEvent": [
                 "() => {",
                 "  console.log(`EVENT RECEIVED: order-error`);",
                 "  notepad.orderError = true;",
                 "}"
             ]
-        ]
+        }
     },
     "51": {
         "id": 51,
@@ -594,8 +595,11 @@
         "name": "If there is an order error, acknowledge it",
         "asset-pack": "project",
         "parent": 1,
-        "args": [
-            [
+        "decorators": [
+            53
+        ],
+        "options": {
+            "getConfig": [
                 "() =>  {",
                 "\treturn {",
                 "\t\tmimId: 'MimTestPizzaOrderError',",
@@ -607,35 +611,49 @@
                 "\t}",
                 "}"
             ],
-            [
+            "onStatus": [
                 "(status) =>  {",
                 "}"
             ],
-            [
+            "onResults": [
                 "(results) =>  {",
                 "}"
             ]
-        ],
-        "decorators": [
-            53
-        ]
+        }
     },
     "53": {
         "id": 53,
         "class": "SucceedOnCondition",
         "name": "",
         "asset-pack": "core",
-        "args": [
-            [
+        "options": {
+            "init": [
                 "() => {",
                 "}"
             ],
-            [
+            "conditional": [
                 "() => {",
                 "  // If there is no error, succeed immediately, i.e. skip this behavior",
                 "  return !notepad.orderError;",
                 "}"
             ]
-        ]
+        }
+    },
+    "meta": {
+        "version": 1
+    },
+    "e662584f-2030-4004-9fcb-fd1083e1fac2": {
+        "id": "e662584f-2030-4004-9fcb-fd1083e1fac2",
+        "class": "ExecuteScript",
+        "name": "",
+        "options": {
+            "exec": [
+                "() => {",
+                "  console.log('entered main.bt');",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
     }
 }

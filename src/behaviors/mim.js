@@ -1,34 +1,38 @@
-import path from 'path';
-import jibo from 'jibo';
+let path = require ('path');
+let jibo = require ('jibo');
 
-let {Status, createBehavior, factory} = jibo.bt;
+let Status = jibo.bt.Status;
+let Behavior = jibo.bt.Behavior;
 
 let blackboard = {};
 
-module.exports = createBehavior({
+class Mim extends Behavior {
     constructor(options) {
+        super(options);
         this.getConfig = options.getConfig;
         this.onStatus = options.onStatus;
         this.onResults = options.onResults;
         this.status = Status.INVALID;
-    },
+    }
     start() {
         this.status = Status.IN_PROGRESS;
 
-        this.root = factory.create('./mim-bt', {
+        this.root = jibo.bt.create('./mim-bt', {
             blackboard: blackboard,
             notepad: {config: this.getConfig(), onStatus: this.onStatus, onResults: this.onResults}
         });
 
         return this.root.start();
-    },
+    }
     stop() {
 
-    },
+    }
     update() {
         this.root.update();
         return this.root.status
     }
-});
+};
 
-factory.addBehavior(module, "project");
+jibo.bt.register("Mim", "project",Mim);
+
+module.exports = Mim;

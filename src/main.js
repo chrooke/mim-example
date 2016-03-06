@@ -5,9 +5,7 @@ let path = require ('path');
 let GuiManager = require ('./mim/debug-gui-manager');
 let MimManager = require ('./mim/mim-manager');
 
-let Status, factory = jibo.bt.Status;
-
-let root = null;
+let Status = jibo.bt.Status;
 
 let blackboard = {};
 let notepad = {};
@@ -17,9 +15,7 @@ function start() {
         blackboard: blackboard,
         notepad: notepad
     });
-        console.log('done create root');
     root.start();
-        console.log('start root');
     window.requestAnimationFrame(update);
 }
 

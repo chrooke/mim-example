@@ -1,22 +1,27 @@
-import jibo from 'jibo';
-let {Status, createBehavior, factory} = jibo.bt;
+let jibo = require ('jibo');
 
-module.exports = createBehavior({
-    constructor(text) {
-        this.text = text;
+let Status = jibo.bt.Status;
+let Behavior = jibo.bt.Behavior;
+
+class DebugBehavior extends Behavior {
+    constructor(options) {
+        super(options);
+        this.text = options.text;
         this.status = Status.INVALID;
-    },
+    }
     start() {
         this.status = Status.SUCCEEDED;
         console.log(this.text);
         return true;
-    },
+    }
     stop() {
 
-    },
+    }
     update() {
         return this.status;
     }
-});
+};
 
-factory.addBehavior(module, "project");
+jibo.bt.register("DebugBehavior", "project",DebugBehavior);
+
+module.exports = DebugBehavior;
