@@ -1,9 +1,9 @@
 {
   "DebugBehavior": {
     "type": "leaf",
-    "args": ["string"],
-    "meta": [
+    "options": [
       {
+        "type": "string",
         "field": "text",
         "description": "text.",
         "defaultValue": "null"
@@ -12,19 +12,21 @@
   },
   "Mim": {
     "type": "leaf",
-    "args": ["function", "function", "function"],
-    "meta": [
+    "options": [
       {
+        "type": "function",
         "field": "getConfig",
         "description": "MIM Config",
         "defaultValue": "() =>  {\n\treturn {}\n}"
       },
       {
+        "type": "function",
         "field": "onStatus",
         "description": "MIM Status",
         "defaultValue": "(status) =>  {\n}"
       },
       {
+        "type": "function",
         "field": "onResults",
         "description": "MIM Results",
         "defaultValue": "(results) =>  {\n}"
@@ -33,19 +35,21 @@
   },
   "MimGui": {
     "type": "leaf",
-    "args": ["function", "function", "function"],
-    "meta": [
+    "options": [
       {
+        "type": "function",
         "field": "getConfig",
         "description": "MIM Gui Config",
         "defaultValue": "() =>  {\n\treturn {\n\t\tmimConfig: notepad.mimConfig,\n\t\tmimState: notepad.mimState\n\t}\n}"
       },
       {
+        "type": "function",
         "field": "onStatus",
         "description": "MIM Gui Status",
         "defaultValue": "(status) =>  {\n}"
       },
       {
+        "type": "function",
         "field": "onResults",
         "description": "MIM Gui Results",
         "defaultValue": "(results) =>  {\n}"
