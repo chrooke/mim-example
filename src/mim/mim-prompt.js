@@ -1,6 +1,7 @@
 /**
  * Created by Andrew Rapo on 12/23/15.
  */
+"use strict";
 
 class MimDbPrompt {
     constructor() {
@@ -83,4 +84,4 @@ class MimDbPrompt {
     }
 }
 
-export default MimDbPrompt;
+module.exports = MimDbPrompt;

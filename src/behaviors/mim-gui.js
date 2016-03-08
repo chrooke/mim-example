@@ -1,3 +1,5 @@
+"use strict";
+
 let path = require ('path');
 let jibo = require ('jibo');
 let MimManager = require ('../mim/mim-manager.js');

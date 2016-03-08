@@ -1,7 +1,7 @@
 /**
  * Created by Andrew Rapo on 12/27/15.
  */
-
+"use strict";
 
 class AsrResult {
     constructor(data) {
@@ -65,4 +65,4 @@ class AsrResult {
     }
 }
 
-export default AsrResult;
+module.exports =  AsrResult;

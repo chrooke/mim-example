@@ -1,4 +1,5 @@
-let jibo = require ('jibo');
+"use strict";
+let jibo = require('jibo');
 
 let Status = jibo.bt.Status;
 let Behavior = jibo.bt.Behavior;

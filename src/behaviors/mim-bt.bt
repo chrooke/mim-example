@@ -152,7 +152,7 @@
             ],
             "onResult": [
                 "(listener) => {",
-                "\tlistener.on('cloud', function(asrResultsData, speakerIdsData) => {",
+                "\tlistener.on('cloud', function(asrResultsData, speakerIdsData) {",
                 "\t\tconsole.log(`MimBt: ListenJS Listen: Results:`, asrResultsData, speakerIdsData);",
                 "\t\t",
                 "\t\tnotepad.asrResults = new notepad.AsrResults(asrResultsData);",

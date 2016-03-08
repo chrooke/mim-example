@@ -1,6 +1,7 @@
 /**
  * Created by Andrew Rapo on 1/8/16.
  */
+"use strict";
 
 class MimManager {
 
@@ -24,4 +25,4 @@ class MimManager {
 MimManager.initialized = false;
 MimManager.guiManager = null;
 
-export default MimManager;
+module.exports = MimManager;

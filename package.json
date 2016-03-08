@@ -7,9 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "babel-core": "^5.4.5",
-    "behaviorify": "1.0.0",
-    "jibo": "2.0.3"
+    "behaviorify": "^1.0.0",
+    "jibo": "^2.0.3"
   },
   "devDependencies": {},
   "author": "Andrew Rapo",

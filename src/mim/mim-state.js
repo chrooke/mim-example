@@ -1,6 +1,7 @@
 /**
  * Created by Andrew Rapo on 12/27/15.
  */
+"use strict";
 
 class MimState {
     constructor() {
@@ -48,4 +49,4 @@ class MimState {
     }
 }
 
-export default MimState;
+module.exports = MimState;

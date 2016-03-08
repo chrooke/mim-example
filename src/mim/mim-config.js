@@ -1,8 +1,9 @@
 /**
  * Created by Andrew Rapo on 12/22/15.
  */
+"use strict";
 
-import MimPrompt from './mim-prompt';
+let MimPrompt = require('./mim-prompt');
 
 class MimConfig {
 
@@ -215,4 +216,4 @@ MimConfig.promptSubCategoryNoMatch = 'NoMatch';
 MimConfig.promptSubCategoryNoInput = 'NoInput';
 
 
-export default MimConfig;
+module.exports = MimConfig;

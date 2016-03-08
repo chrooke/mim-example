@@ -1,6 +1,7 @@
 /**
  * Created by Andrew Rapo on 12/27/15.
  */
+"use strict";
 
 class SpeakerIds {
     constructor(data) {
@@ -44,4 +45,4 @@ class SpeakerIds {
     }
 }
 
-export default SpeakerIds;
+module.exports =  SpeakerIds;

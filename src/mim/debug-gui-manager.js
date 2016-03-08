@@ -1,7 +1,7 @@
 /**
  * Created by Andrew Rapo on 12/27/15.
  */
-
+"use strict";
 
 class DebugGuiManager {
 
@@ -102,4 +102,4 @@ DebugGuiManager.resultsDiv = null;
 
 DebugGuiManager.eventListener = null;
 
-export default DebugGuiManager;
+module.exports = DebugGuiManager;
