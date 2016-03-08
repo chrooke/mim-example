@@ -16,18 +16,15 @@ function start() {
         notepad: notepad
     });
     root.start();
-    window.requestAnimationFrame(update);
+    let intervalId = setInterval(function() {
+        if (root.status !== Status.IN_PROGRESS) {
+            clearInterval(intervalId);
+            console.log('Behavior tree finished with status ' + root.status);
+        } else {
+            root.update();
+        }
+    }, 33);
 }
-
-function update() {
-    if (root.status !== Status.IN_PROGRESS) {
-        console.log(`BehaviorTree Exited with status: ${root.status}`);
-    } else {
-        root.update();
-        window.requestAnimationFrame(update);
-    }
-}
-
 
 jibo.init(function() {
   console.log('Setup');
